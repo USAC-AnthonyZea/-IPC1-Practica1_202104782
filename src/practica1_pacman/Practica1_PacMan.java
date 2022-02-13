@@ -16,8 +16,8 @@ public class Practica1_PacMan {
         String nombre = "";
 
         //Arreglos para almacenar nombre y puntaje
-        int[] punteoSave = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
-        String nombreSave[] = new String[10];
+        int[] punteoSave = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+        String nombreSave[] = new String[20];
 
         //Contadores para tabla de posiciones
         int contadorArray = 0;
@@ -44,8 +44,7 @@ public class Practica1_PacMan {
                     int opcionMenu;
 
                     //Variables para ordenamiento
-                    int pos,
-                     auxOrdenamiento1;
+                    int auxOrdenamiento1;
 
                     String auxOrdenamiento2;
 
@@ -879,12 +878,13 @@ public class Practica1_PacMan {
                             //Para poner el juego en pausa
                             case "m":
                             case "M":
-                                System.out.println("----MENU DE PAUSA----");
-                                System.out.println("---------------------");
-                                System.out.println("1.  Continuar partida");
-                                System.out.println("2.   Tabla Posiciones");
-                                System.out.println("3.      Salir partida");
-                                System.out.println("---------------------");
+                            case "1":
+                                System.out.println("------ MENU DE PAUSA ------");
+                                System.out.println("---------------------------");
+                                System.out.println("1.        CONTINUAR PARTIDA");
+                                System.out.println("2.      TABLA DE POSICIONES");
+                                System.out.println("3.      SALIR DE LA PARTIDA");
+                                System.out.println("---------------------------");
 
                                 System.out.println("Jugador: " + nombre + "," + " Punteo: " + punteo + "," + " Vidas: " + vidas);
                                 System.out.print("\nIngrese una opcion:  ");
@@ -895,25 +895,28 @@ public class Practica1_PacMan {
                                         break;
                                     case 2:
                                         //Tabla de posiciones
-                                        System.out.println("\n-----------------------");
+                                        System.out.println("\n--------------------------");
                                         System.out.println("         Top 10:       ");
-                                        System.out.println("-----------------------");
+                                        System.out.println("--------------------------");
                                         System.out.println(" ");
 
                                         //Imprimir el arreglo de punteo
                                         for (int i = (punteoSave.length - 1); i >= 0; i--) {
 
-                                            //if (nombreSave[i] != null) {
+                                            if (nombreSave[i] != null) {
 
                                                 System.out.println((punteoSave.length - i) + ". Nombre: " + nombreSave[i] + ", Punteo: " + punteoSave[i]);
 
-                                            //}
+                                            }
                                         }
                                         break;
                                     case 3:
                                         System.out.println("\nHa finalizado el juego");
                                         salirJuego = 5;   //Condicion solo para validar que se salga del juego
                                         break;
+                                        
+                                        default:
+                                            System.out.println("Ingreso una opcion incorrecta");
                                 }
 
                                 break;
@@ -980,23 +983,7 @@ public class Practica1_PacMan {
                             }
                         }
                     }
-                    
 
-                  /*  //Metodo de ordenamiento por insercion
-                    for (int i = 0; i < punteoSave.length; i++) {
-                        pos = i;
-                        auxOrdenamiento1 = punteoSave[i];
-                        auxOrdenamiento2 = nombreSave[i];
-
-                        while ((pos > 1) && (punteoSave[pos - 1] > auxOrdenamiento1)) {
-                            punteoSave[pos] = punteoSave[pos - 1];
-                            nombreSave[pos] = nombreSave[pos - 1];
-                            pos--;
-                        }
-                        nombreSave[pos] = auxOrdenamiento2;
-                        punteoSave[pos] = auxOrdenamiento1;
-                    }
-*/
                     break;
                     
                 case 2:
@@ -1009,11 +996,11 @@ public class Practica1_PacMan {
                     //Imprimir el arreglo de punteo
                     for (int i = (punteoSave.length - 1); i >= 0; i--) {
 
-                        //if (nombreSave[i] != null) {
+                        if (nombreSave[i] != null) {
 
                             System.out.println((punteoSave.length - i) + ". Nombre: " + nombreSave[i] + ", Punteo: " + punteoSave[i]);
 
-                        //}
+                        }
                     }
 
                     break;
